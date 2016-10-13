@@ -21,6 +21,21 @@ function modulo($modulo, $cssclase="",$cssid="")
 
 }
 
+function bloque($bloque, $cssclase="",$cssid="")
+{
+    if($cssclase!=""){
+        $cssclase='class="'.$cssclase.'"';
+    }
+
+    if($cssid!=""){
+        $cssid='id="'.$cssid.'"';
+    }
+    echo '<div '.$cssclase.' '.$cssid.'>';
+    require('Bloques/'.$bloque.".bloque.php");
+    echo '</div>';
+
+}
+
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);

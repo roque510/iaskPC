@@ -1,18 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"/>
+      <link type="text/css" rel="stylesheet" href="css/style.css"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
 
-<link rel="stylesheet" href="css/style.css" />
-<title>Title of the document</title>
-</head>
-
-<body>
-
-<?php  ?>
+    <body>
+    <div class="bodyWrap">
+      <!--Import jQuery before materialize.js-->
 
 
-<script src="js/magic.js"></script>
-</body>
+    
+<?php 
 
-</html>
+
+      require_once ('medoo.php');
+      require_once('funciones.php');
+      require_once('config.php');
+      $page = "inicio";
+      if (isset($_GET['pg'])) {
+        $page = $_GET['pg'];
+      }
+
+
+      if(false/*!isset($_SESSION['usr'])*/){
+        modulo('login');
+      }
+      else {
+        if($page === "login")
+        modulo('login');
+        else{     
+
+            modulo('header');
+            if (file_exists ("Modulos/".$page.".modulo.php")) {
+              modulo($page);
+            }
+            else{
+              modulo('error');
+            }
+        }
+
+
+      
+
+    }
+
+?>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/init.js"></script>
+      </div>
+    </body>
+  </html>
