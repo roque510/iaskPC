@@ -2,7 +2,7 @@
   <div class="row infowrap">
     <div class="col s12">
         <div class="info">
-          <h1 class="white-text">Guias <span>|</span><span class="crear">Crear Guia</span></h1>
+          <h1 class="white-text">Guias <span>|</span><a class="crear" href="?pg=create">Crear Guia</a></h1>
         </div>    
     </div>
   </div>

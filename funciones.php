@@ -15,9 +15,9 @@ function modulo($modulo, $cssclase="",$cssid="")
     if($cssid!=""){
         $cssid='id="'.$cssid.'"';
     }
-    echo '<div '.$cssclase.' '.$cssid.'>';
+    
     require('Modulos/'.$modulo.".modulo.php");
-    echo '</div>';
+    
 
 }
 

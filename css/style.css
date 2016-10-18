@@ -67,6 +67,20 @@ h1{
   text-shadow: 0.1em 0.1em 0.1em black;
 }
 
+.top3-wrap{
+  height: 100px;
+}
+
+.respuestaCorrecta{
+  background-color: rgba( 17, 182, 59,0.2) !important;
+  border:1pt solid black;
+}
+
+.respuestaMala{
+    background-color: rgba(198, 17, 17,0.2) !important; 
+    border:1pt solid black;
+}
+
 .footer-top3 {
   position: relative;    
   width: 110%;
@@ -79,7 +93,6 @@ color: rgba(128,  185,  46,  0.7);
 transform:  rotate(367deg);
 top: -200px !important;
 overflow-x: hidden;
-margin-bottom: -270px !important;
 }
 
 .cola{
