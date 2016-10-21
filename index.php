@@ -1,6 +1,7 @@
   <!DOCTYPE html>
   <html>
     <head>
+        <meta charset="utf-8" />
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -54,6 +55,7 @@
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
       <script type="text/javascript" src="js/init.js"></script>
+      <script type="text/javascript" src="js/magic.js"></script>
       </div>
     </body>
   </html>
