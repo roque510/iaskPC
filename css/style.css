@@ -9,6 +9,11 @@ html{
     
     
 }
+
+#correoActual{
+  font-size: 60px;
+}
+
 .btncambiarC{
   height: 50px;
 }
