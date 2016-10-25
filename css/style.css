@@ -10,8 +10,8 @@ html{
     
 }
 
-#correoActual{
-  font-size: 60px;
+.font60{
+  font-size: 60px !important;
 }
 
 .btncambiarC{
@@ -22,6 +22,10 @@ html{
   font-size: 60px;
 }
 
+.btn{
+  margin-bottom: 10px;
+}
+
 .h3{
   font-size: 30px;
 }
@@ -29,6 +33,7 @@ html{
 #picEdit{
   border: 3pt solid black;
   border-radius: 25px;
+  width: 100%;
 }
 
 .doublering{

@@ -11,8 +11,6 @@
     				<br>
     				<br>
 					<a class="waves-effect waves-light btn " id="btncambiarClave" href="?pg=cc"><i class="material-icons left">lock</i>Cambiar Contraseña</a>
-					<br>
-					<br>
 					<a class="waves-effect waves-light btn" href="?pg=ce"><i class="material-icons left">email</i>Cambiar Correo</a>
 				
 
