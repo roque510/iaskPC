@@ -10,8 +10,8 @@
               </div>
             </div>
             <div class="card-action">
-              <a href="#">Ver guia</a>
-              <a href="#">Calificar Guia</a>
+              <a href="?pg=viewGuide">Ver guia</a>
+              <a href="?pg=calificar">Calificar Guia</a>
             </div>
           </div>
         </div>
@@ -28,8 +28,8 @@
               </div>
             </div>
             <div class="card-action">
-              <a href="#">Ver guia</a>
-              <a href="#">Calificar Guia</a>
+              <a href="?pg=viewGuide">Ver guia</a>
+              <a href="?pg=calificar">Calificar Guia</a>
             </div>
           </div>
         </div>
@@ -46,8 +46,8 @@
               </div>
             </div>
             <div class="card-action">
-              <a href="#">Ver guia</a>
-              <a href="#">Calificar Guia</a>
+              <a href="?pg=viewGuide">Ver guia</a>
+              <a href="?pg=calificar">Calificar Guia</a>
             </div>
           </div>
         </div>
@@ -63,8 +63,8 @@
               </div>
             </div>
             <div class="card-action">
-              <a href="#">Ver guia</a>
-              <a href="#">Calificar Guia</a>
+              <a href="?pg=viewGuide">Ver guia</a>
+              <a href="?pg=calificar">Calificar Guia</a>
             </div>
           </div>
         </div>
