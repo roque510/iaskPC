@@ -1,5 +1,5 @@
-<div class="blank">
-  <div class="row infowrap">
+<div class="blank container">
+  <div class="row infowrap ">
     <div class="col s12">
         <div class="info">
           <h1 class="white-text">Guias <span>|</span><a class="crear" href="?pg=create">Crear Guia</a></h1>
@@ -9,44 +9,81 @@
 
 
   <ul class="collapsible borderless z-depth-0 transparent" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header borderless transparent white-text shadow"><i class="material-icons">filter_drama</i>First 
+    <li class="">
+       <div class="collapsible-header transparent white-text shadow row">  
 
-      <div class="right"><i class="material-icons stroke edit">mode_edit</i><i class="material-icons stroke delete">delete</i></div>
+          <div class="col s12 m4">
+            <i class="material-icons">filter_drama</i>
+            First
 
-      <div class="right pdefault shadow" style="margin-right:20px;">Estatus: <span style="margin-left:10px;" class="right"> Activo  </span></div>
+          </div>
+          <div class="col s12 m8 row container right white-text shadow">
+           
 
-      <div class="right pdefault shadow" style="margin-right:20px;">Porcentaje: <span style="margin-left:10px;" class="right"> 0%</span> </div>
+            <div class="col m4  pdefault shadow" style="text-align: right;">Estatus: <span style="margin-left:10px;" class=""> Activo  </span></div>
 
+            <div class="col m4  pdefault shadow" style="text-align: right;">Porcentaje: <span style="margin-left:10px;" class=""> 0%    </span> </div>
+             <div class="col m4  left">             
+              <i class="material-icons stroke delete right">delete</i>
+              <i class="material-icons stroke edit right">mode_edit</i>
+             </div>
 
-      
-      </div>
+          </div>
+       </div>      
+
       <div class="collapsible-body colab white-text"><p>Lorem ipsum dolor sit amet.</p></div>
     </li>
-    <li>
-      <div class="collapsible-header borderless transparent white-text shadow"><i class="material-icons">place</i>Second
-      
-            <div class="right"><i class="material-icons stroke edit">mode_edit</i><i class="material-icons stroke delete">delete</i></div>
 
-      <div class="right pdefault shadow" style="margin-right:20px;">Estatus: <span style="margin-left:10px;" class="right"> Activo  </span></div>
+        <li class="">
+       <div class="collapsible-header transparent white-text shadow row">  
 
-      <div class="right pdefault shadow" style="margin-right:20px;">Porcentaje: <span style="margin-left:10px;" class="right"> 0%</span> </div>
+          <div class="col s12 m4">
+            <i class="material-icons">share</i>
+            Second
 
-      </div>
+          </div>
+          <div class="col s12 m8 row container right white-text shadow">
+           
+
+            <div class="col m4  pdefault shadow" style="text-align: right;">Estatus: <span style="margin-left:10px;" class=""> Activo  </span></div>
+
+            <div class="col m4  pdefault shadow" style="text-align: right;">Porcentaje: <span style="margin-left:10px;" class=""> 0%    </span> </div>
+             <div class="col m4  left">             
+              <i class="material-icons stroke delete right">delete</i>
+              <i class="material-icons stroke edit right">mode_edit</i>
+             </div>
+
+          </div>
+       </div>      
+
       <div class="collapsible-body colab white-text"><p>Lorem ipsum dolor sit amet.</p></div>
     </li>
-    <li>
-      <div class="collapsible-header borderless transparent white-text shadow"><i class="material-icons">whatshot</i>Third
 
-            <div class="right"><i class="material-icons stroke edit">mode_edit</i><i class="material-icons stroke delete">delete</i></div>
+        <li class="">
+       <div class="collapsible-header transparent white-text shadow row">  
 
-      <div class="right pdefault shadow" style="margin-right:20px;">Estatus: <span style="margin-left:10px;" class="right"> Activo  </span></div>
+          <div class="col s12 m4">
+            <i class="material-icons">lock</i>
+            third
 
-      <div class="right pdefault shadow" style="margin-right:20px;">Porcentaje: <span style="margin-left:10px;" class="right"> 0%</span> </div>
+          </div>
+          <div class="col s12 m8 row container right white-text shadow">
+           
 
-      </div>
+            <div class="col m4  pdefault shadow" style="text-align: right;">Estatus: <span style="margin-left:10px;" class=""> Activo  </span></div>
+
+            <div class="col m4  pdefault shadow" style="text-align: right;">Porcentaje: <span style="margin-left:10px;" class=""> 0%    </span> </div>
+             <div class="col m4  left">             
+              <i class="material-icons stroke delete right">delete</i>
+              <i class="material-icons stroke edit right">mode_edit</i>
+             </div>
+
+          </div>
+       </div>      
+
       <div class="collapsible-body colab white-text"><p>Lorem ipsum dolor sit amet.</p></div>
     </li>
+   
   </ul>
 
 </div>

@@ -10,8 +10,8 @@ html{
     
 }
 
-#correoActual{
-  font-size: 60px;
+.emailCE{
+  font-size: 60px !important;
 }
 
 .btncambiarC{
