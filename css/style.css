@@ -56,6 +56,43 @@ border:3pt solid whitesmoke;
 position: relative;
 
 }
+#bgGuia{
+  background-image: url("../img/tile.png");
+  background-repeat: repeat;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+h2 {
+  font-family: borf;
+}
+
+.preg{
+  
+}
+
+.resp{
+  margin-left: 70px;
+}
+
+  .starrow{
+    float: left;
+  }
+
+  .seconHalf{
+    margin-top:-65.5px; width:30px; overflow:hidden;
+  }
+
+  .star{
+    cursor:pointer;
+    font-size: 60px;
+    color: #ffeb3b !important;
+  }
+  .star:hover{
+    color: rgba(210,146,52,1) !important;
+  }
 
 #picWrapper{
   position: absolute;
