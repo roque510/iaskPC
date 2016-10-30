@@ -7,6 +7,9 @@
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.css"/>
       <link type="text/css" rel="stylesheet" href="css/style.css"/>
+      <link rel="stylesheet" href="css/rating.min.css">
+      <link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
+      
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -56,6 +59,23 @@
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
       <script type="text/javascript" src="js/init.js"></script>
       <script type="text/javascript" src="js/magic.js"></script>
+      <script src="js/rating.min.js"></script>
+      <script type="text/javascript">
+          // target element
+var el = document.querySelector('#el');
+
+// current rating, or initial rating
+var currentRating = 4;
+
+// max rating, i.e. number of stars you want
+var maxRating = 5;
+
+// callback to run after setting the rating
+var callback = function(rating) { alert(rating); };
+
+// rating instance
+var myRating = rating(el, currentRating, maxRating, callback);
+      </script>
       </div>
     </body>
   </html>

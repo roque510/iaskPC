@@ -11,8 +11,6 @@
     				<br>
     				<br>
 					<a class="waves-effect waves-light btn " id="btncambiarClave" href="?pg=cc"><i class="material-icons left">lock</i>Cambiar Contraseña</a>
-					<br>
-					<br>
 					<a class="waves-effect waves-light btn" href="?pg=ce"><i class="material-icons left">email</i>Cambiar Correo</a>
 				
 
@@ -26,7 +24,17 @@
 		<h2 class="white-text shadow borf" >Correo: <span>roque09215@gmail.com</span></h2>
 		<h2 class="white-text shadow borf" >Guias Creadas: <span>99</span></h2>
 		<h2 class="white-text shadow borf" >Promedio de estudio: <span>80%</span></h2>
-		<h2 class="white-text shadow borf" >Calidad de creador: <span><br> * * * - -</span></h2>
+		<h2 class="white-text shadow borf" >Calidad de creador: <span><br>
+                <div id="rating">
+                  <div class="" style="width: 305px; height:50px;">
+                    <div class="starrow"><div><i class="starhalf material-icons prefix">star</i></div></div>
+                    <div class="starrow"><div><i class="starhalf material-icons prefix">star</i></div></div>
+                    <div class="starrow"><div><i class="starhalf material-icons prefix">star</i></div></div>
+                    <div class="starrow"><div><i class="starhalf material-icons prefix">star</i></div></div>
+                    <div class="starrow"><div><i class="starhalf material-icons prefix">star_border</i></div></div>
+                  </div>                  
+                </div>  
+		</span></h2>
 	</div>
 
 </div>
