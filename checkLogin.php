@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 
 $user = " ";
 
@@ -14,7 +16,12 @@ if (isset($_POST["pass"])) {
 
 
 if($user === "aroque" && $pass === "mandingo21"){
-	header("Location: index.php?pg=inicio");
+	$_SESSION['usr'] = "aroque";
+	header("Location: index.php");
+	
 }
+
+	
+
 
 ?>

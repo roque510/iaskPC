@@ -7,12 +7,14 @@
         <li><a href="?pg=inicio">Mis Guias</a></li>
         <li><a href="?pg=historial">Historial</a></li>
         <li><a href="?pg=search">Buscar Guias</a></li>
+        <li><a href="cerrar.php">Cerrar Sesion</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="?pg=perfil">Perfil</a></li>
         <li><a href="?pg=inicio">Mis Guias</a></li>
         <li><a href="?pg=historial">Historial</a></li>
         <li><a href="?pg=search">Buscar Guias</a></li>
+        <li><a href="cerrar.php">Cerrar Sesion</a></li>
       </ul>
     </div>
   </nav>

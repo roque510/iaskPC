@@ -1,3 +1,4 @@
+  <?php session_start(); ?>
   <!DOCTYPE html>
   <html>
     <head>
@@ -32,7 +33,7 @@
       }
 
 
-      if(false/*!isset($_SESSION['usr'])*/){
+      if(!isset($_SESSION['usr'])){
         modulo('login');
       }
       else {
