@@ -2,7 +2,7 @@
 require_once('medoo.php');
 GLOBAL $SVR,$USR,$PW,$DB;
 
-$DB= "charts";
+$DB= "iask";
 $SVR = "localhost";
 $PW = "";
 $USR = "root";

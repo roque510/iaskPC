@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 25-08-2016 a las 00:50:42
+-- Tiempo de generación: 01-11-2016 a las 20:29:46
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `charts`
+-- Base de datos: `iask`
 --
 
 -- --------------------------------------------------------
@@ -27,22 +27,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
-  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
-  `Usuario` varchar(32) NOT NULL,
-  `Nombre` varchar(32) NOT NULL,
-  `Apellido` varchar(32) NOT NULL,
-  `Password` varchar(32) NOT NULL,
-  `Nivel` varchar(32) NOT NULL,
-  `Status` int(11) NOT NULL,
-  PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`idUsuario`, `Usuario`, `Nombre`, `Apellido`, `Password`, `Nivel`, `Status`) VALUES
-(1, 'aroque', 'Armando', 'Roque', 'eb2be918f3540e71b213f2d9b13c5687', '1', 1);
+  `id` int(11) DEFAULT NULL,
+  `usuario` varchar(32) NOT NULL,
+  `nombre` varchar(32) NOT NULL,
+  `pass` varchar(32) NOT NULL,
+  `apellido` varchar(32) NOT NULL,
+  `correo` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
