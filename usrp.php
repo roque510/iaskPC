@@ -5,15 +5,15 @@ require_once('funciones.php');
 require_once('config.php');
 
 
-$alias = "";
-$pass = "";
+$usr = "";
+$pwd = "";
 $admin = "no es admin";
 
-if (isset($_POST['alias'])) {
-	$alias = $_POST['alias'];
+if (isset($_POST['usr'])) {
+	$usr = $_POST['usr'];
 }
-if (isset($_POST['pass'])) {
-	$pass = md5($_POST['pass']);
+if (isset($_POST['pwd'])) {
+	$pwd = md5($_POST['pwd']);
 }
 
 $database = new medoo([
@@ -26,32 +26,27 @@ $database = new medoo([
         ]);
 
 
-$nivel = $database->get("usuarios", "Nivel", [
-	"Usuario" => $alias
-]);
-
-$uid = $database->get("usuarios", "idUsuario", [
-	"Usuario" => $alias
+$uid = $database->get("usuarios", "id", [
+	"usuario" => $alias
 ]);
 
 
 if ($database->has("usuarios", [
 	"AND" => [
 		"OR" => [
-			"Usuario" => $alias
+			"usuario" => $name
 		]
 		
 		,
-		"Password" => $pass
+		"pass" => $pwd
 	]
 ]))
 {
 	
-	$_SESSION['nivel'] = $nivel;
 	$_SESSION['usr'] = $alias;
 	$_SESSION['uid'] = $uid;
 
-	$arr = array ('response'=>'correcto','user'=> $alias, 'comment'=>$nivel);
+	$arr = array ('response'=>'correcto','user'=> $name, 'comment'=>"blank");
 	echo json_encode($arr);
 }
 else

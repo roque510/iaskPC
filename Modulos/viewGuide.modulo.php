@@ -20,10 +20,10 @@
 
 
 		<h1 class="preg center">1 <span><i class="material-icons">label</i></span> Cuanto es 1 + 1?</h1>
-		<h2 class="resp center">R= 2  <span><i class="material-icons">check</i></span> </h2>
+		<h2 class="borf resp center">R= 2  <span><i class="material-icons">check</i></span> </h2>
 
 		<h1 class="preg center">2 <span><i class="material-icons">label</i></span> Cuanto es 2 + 2?</h1>
-		<h2 class="resp center">R= 4  <span><i class="material-icons">check</i></span> </h2>
+		<h2 class="borf resp center">R= 4  <span><i class="material-icons">check</i></span> </h2>
 
 
 		<div class="divider black container"></div>
