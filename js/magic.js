@@ -10,6 +10,8 @@ $( document ).ready(function() {
     });
 });
 
+
+
 });
 
 var star = $(".star");
@@ -31,4 +33,89 @@ star.click( function(){
 
 
 });
+
+    var frmbtn = $("#frmbtn");
+var usr = $('#usr');
+var namea = $('#name');
+var lastname = $('#lastname');
+var email = $('#email');
+var pwd = $('#pwd');
+var pwd2 = $('#pwd2');
+
+pwd2.keypress(function(e) {
+
+
+    if(e.which == 13) {
+        frmbtn.click();
+    }
+});
+
+frmbtn.click(function(e) {
+	e.preventDefault();
+	if (pwd.val() != pwd2.val()) {
+		swal('No coinciden!',"las contraseñas deben ser iguales!",'error');
+		return;
+
+	}
+
+var check = true;
+
+  if(!usr.val())
+  	check = false;
+  if(!namea.val())
+  	check = false;
+  if(!lastname.val())
+  	check = false;
+  if(!email.val())
+  	check = false;
+  if(!pwd.val())
+  	check = false;
+  if(!pwd2.val())
+  	check = false;
+
+  
+  var datastring = $('#regForm').serialize();
+  console.log(datastring);
+
+  var form = $('#regForm'); // You need to use standart javascript object here
+var formData = new FormData(form);
+
+  if(check)
+		$.ajax({
+            url: 'reg.php',
+            type: "POST",
+            dataType:'json',
+            data: $('#regForm').serialize(),
+            beforeSend: function() {
+    			$('#modal1').openModal();
+    		},
+            success: function (data) {
+            	 $('#modal1').closeModal();
+              if(data.response == "correcto"){
+                swal("EXITO!","Bienvenido "+data.user+", ahora ve a tu correo para verificar tu cuenta!", "success").then(function(){
+                	location.href = "index.php";
+                })
+              }
+              else {
+                swal("Oh no!", data.comment, "error");
+                 //$('#modal1').openModal(); //LOADING ANIMATION
+              }
+            },
+            error: function(){
+
+            }
+          });
+  else
+  	swal('Oops...', 'Debes llenar todos los campos del formulario!', 'error');
+  
+
+});
+
+
+
+
+
+
+
+
 

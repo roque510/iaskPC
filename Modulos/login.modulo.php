@@ -13,12 +13,23 @@
       <br>
       <span class="inputHead"><i class="material-icons right">vpn_key</i></span>
       <input class="splashInput" placeholder="Password" type="password" name="pass">
-      <br><br>
-        <button class="btn col s12 waves-effect waves-light" type="submit" name="action">Submit
-          <i class="material-icons right">send</i>
-        </button>
 
-    </form>
+
+
+    
   </div>
 </div>
+
+      <div class="row container">
+        <div class="col m4"></div>
+        <div class="col s12 m4">
+          <button class="col s12 btn waves-effect waves-light" type="submit" name="action">iniicar
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+        <div class="col s12 m4">
+          <a class="col s12 waves-effect waves-light btn" href="?pg=form"><i class="material-icons right">assignment</i>Registrarse</a>
+        </div>
+      </div>
+  </form>
 </div>
