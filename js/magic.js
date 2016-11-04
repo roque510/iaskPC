@@ -131,6 +131,32 @@ $("#loginFrm").on('submit',function(e){
 	});
 });
 
+var guia = [["0","inicio","guia de aroque"]];
+
+$('#GuardarCon').click(function(){
+var pregunta;
+var respuesta;
+
+	if ($("#test3").is(':checked')) {
+		pregunta = $("#pregunta3").val();
+		if ($("#rbtnV").is(':checked')) {
+			respuesta = "Verdadero";
+		}
+		else
+			respuesta = "Falso";
+		
+	}
+
+	var test = [guia.length,pregunta,respuesta];
+	guia.push(test);
+
+	$("#pregunta3").val("");
+
+	$("#bgGuia").append('<h1 class="preg center">'+guia[guia.length -1][0]+'<span><i class="material-icons">label</i></span> '+pregunta+'</h1><h2 class="borf resp center teal-text">R= '+respuesta+'<span><i class="material-icons">check</i></span> </h2>');
+
+	console.log(guia);
+});
+
 
 
 
