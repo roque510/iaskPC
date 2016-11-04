@@ -154,7 +154,7 @@ if (isset($_GET["btn"])) {
 
   <div id="bgGuia" class="row container">
   	<div class="row">
-		<h1 class="title white-text stroke col s12 center " style="font-size:90px;">PSICOLOGIA</h1>
+		<h1 class="title white-text stroke col s12 center " style="font-size:90px;">Guia</h1>
 	</div>
 		<div class="divider black container"></div>
 
