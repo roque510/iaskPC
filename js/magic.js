@@ -73,12 +73,6 @@ var check = true;
   if(!pwd2.val())
   	check = false;
 
-  
-  var datastring = $('#regForm').serialize();
-  console.log(datastring);
-
-  var form = $('#regForm'); // You need to use standart javascript object here
-var formData = new FormData(form);
 
   if(check)
 		$.ajax({
@@ -111,7 +105,31 @@ var formData = new FormData(form);
 
 });
 
-
+$("#loginFrm").on('submit',function(e){
+	$.ajax({
+		url: 'usrp.php',
+            type: "POST",
+            dataType:'json',
+            data:  $('#loginFrm').serialize(),
+            beforeSend: function() {
+    			$('#modal1').openModal();
+    		},
+            success: function (data) {
+            	 $('#modal1').closeModal();
+              if(data.response == "correcto"){
+                swal("EXITO!","Bienvenido "+data.user+"!", "success");
+              }
+              else {
+                swal("Oh no!", data.comment, "error");
+                 //$('#modal1').openModal(); //LOADING ANIMATION
+              }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+			        console.log(JSON.stringify(jqXHR));
+			        console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+			 }
+	});
+});
 
 
 

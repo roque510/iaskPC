@@ -9,12 +9,15 @@ $usr = "";
 $pwd = "";
 $admin = "no es admin";
 
+
+
 if (isset($_POST['usr'])) {
 	$usr = $_POST['usr'];
 }
 if (isset($_POST['pwd'])) {
 	$pwd = md5($_POST['pwd']);
 }
+
 
 $database = new medoo([
           'database_type' => 'mysql',
@@ -27,14 +30,14 @@ $database = new medoo([
 
 
 $uid = $database->get("usuarios", "id", [
-	"usuario" => $alias
+	"usuario" => $usr
 ]);
 
 
 if ($database->has("usuarios", [
 	"AND" => [
 		"OR" => [
-			"usuario" => $name
+			"usuario" => $usr
 		]
 		
 		,
@@ -43,10 +46,10 @@ if ($database->has("usuarios", [
 ]))
 {
 	
-	$_SESSION['usr'] = $alias;
+	$_SESSION['usr'] = $usr;
 	$_SESSION['uid'] = $uid;
 
-	$arr = array ('response'=>'correcto','user'=> $name, 'comment'=>"blank");
+	$arr = array ('response'=>'correcto','user'=> $usr, 'comment'=>"blank");
 	echo json_encode($arr);
 }
 else

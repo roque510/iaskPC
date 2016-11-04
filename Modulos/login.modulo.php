@@ -7,12 +7,12 @@
 <br><br>
 <div class="row container">
   <div class="col s10 offset-s1 ">
-    <form action="checkLogin.php" method="post">
-      <span class="inputHead"><i class="material-icons right">perm_identity</i></span><input class="splashInput" type="text" placeholder="Nombre Usuario" name="user">
+    <form id="loginFrm" action="#" method="post">
+      <span class="inputHead"><i class="material-icons right">perm_identity</i></span><input class="splashInput" type="text" placeholder="Nombre Usuario" name="usr">
       
       <br>
       <span class="inputHead"><i class="material-icons right">vpn_key</i></span>
-      <input class="splashInput" placeholder="Password" type="password" name="pass">
+      <input class="splashInput" placeholder="Password" type="password" name="pwd">
 
 
 
@@ -23,7 +23,7 @@
       <div class="row container">
         <div class="col m4"></div>
         <div class="col s12 m4">
-          <button class="col s12 btn waves-effect waves-light" type="submit" name="action">iniicar
+          <button class="col s12 btn waves-effect waves-light" type="submit" name="action">inicar
             <i class="material-icons right">send</i>
           </button>
         </div>
