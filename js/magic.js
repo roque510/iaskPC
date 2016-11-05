@@ -4,7 +4,7 @@ $( document ).ready(function() {
     $(document).ready(function() {
     $("input[name$='group1']").click(function() {
         var test = $(this).val();
-         document.location.href = '?pg=create&btn=' + test;
+         //document.location.href = '?pg=create&btn=' + test;
         $("div.desc").hide();
         $("#" + test).show();
     });
@@ -131,30 +131,61 @@ $("#loginFrm").on('submit',function(e){
 	});
 });
 
-var guia = [["0","inicio","guia de aroque"]];
+var guia = [["0","inicio","guia de aroque","SM","",""]];
 
 $('#GuardarCon').click(function(){
 var pregunta;
 var respuesta;
+var mala1 = "";
+var mala2 = "";
+var tipo;
 
 	if ($("#test3").is(':checked')) {
+		tipo = "VoF";
 		pregunta = $("#pregunta3").val();
 		if ($("#rbtnV").is(':checked')) {
 			respuesta = "Verdadero";
 		}
 		else
-			respuesta = "Falso";
-		
+			respuesta = "Falso";		
 	}
 
-	var test = [guia.length,pregunta,respuesta];
+	if ($('#test1').is(':checked')) {
+		tipo = "SM";
+		pregunta = $("#pregunta1").val();
+		mala1 = $("#mala1").val();
+		mala2 = $("#mala2").val();
+		respuesta =  $('#resp').val();
+	}
+
+		if ($('#test2').is(':checked')) {
+		tipo = "Comp";
+		pregunta = $("#pregunta2").val();		
+		respuesta =  $('#respuesta').val();
+	}
+
+	var test = [guia.length,pregunta,respuesta,tipo,mala1,mala2];
 	guia.push(test);
 
-	$("#pregunta3").val("");
+	mala1 = "";
+	mala2 = "";
 
-	$("#bgGuia").append('<h1 class="preg center">'+guia[guia.length -1][0]+'<span><i class="material-icons">label</i></span> '+pregunta+'</h1><h2 class="borf resp center teal-text">R= '+respuesta+'<span><i class="material-icons">check</i></span> </h2>');
+	$("#pregunta1").val("");
+	$("#pregunta2").val("");
+	$("#pregunta3").val("");
+	$("#mala1").val("");
+	$("#mala2").val("");
+	$("#resp").val("");
+
+
+	$("#bgGuia").append('<h1 class="preg center">'+guia[guia.length -1][0]+'<span><i class="material-icons">label</i></span> '+pregunta+' <span> ('+tipo+')</span></h1><h2 class="borf resp center teal-text">R= '+respuesta+'<span><i class="material-icons">check</i></span> </h2>');
 
 	console.log(guia);
+});
+
+
+$("#finGuia").click(function(e){
+	swal("hola");
 });
 
 
