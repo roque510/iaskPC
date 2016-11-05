@@ -116,6 +116,8 @@ $("#loginFrm").on('submit',function(e){
     		},
             success: function (data) {
             	 $('#modal1').closeModal();
+            	 console.log(data.response);
+            	 console.log(data);
               if(data.response == "correcto"){
                 swal("EXITO!","Bienvenido "+data.user+"!", "success");
               }
@@ -185,7 +187,43 @@ var tipo;
 
 
 $("#finGuia").click(function(e){
-	swal("hola");
+	swal({
+  title: 'Seguro?',
+  text: "Quieres finalizar esta guia?",
+  type: 'information',
+  showCancelButton: true,
+  confirmButtonText: 'Si, finalizar',
+  cancelButtonText: 'No, aun no he terminado',
+  confirmButtonClass: 'btn btn-success',
+  cancelButtonClass: 'btn btn-danger',
+  buttonsStyling: false
+}).then(function() {
+	swal({
+	  title: 'Escibre el Nombre de tu guia',
+	  input: 'text',
+	  showCancelButton: true,
+	  inputValidator: function(value) {
+	    return new Promise(function(resolve, reject) {
+	      if (value) {
+	        resolve()
+	      } else {
+	        reject('Necesitas escribir el titulo de tu guia!')
+	      }
+	    })
+	  }
+	}).then(function(result) {
+	  swal({
+	    type: 'success',
+	    html: 'You entered: ' + result
+	  })
+	})
+}, function(dismiss) {
+  // dismiss can be 'cancel', 'overlay',
+  // 'close', and 'timer'
+  if (dismiss === 'cancel') {
+
+  }
+})
 });
 
 
