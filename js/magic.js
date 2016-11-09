@@ -133,7 +133,7 @@ $("#loginFrm").on('submit',function(e){
 	});
 });
 
-var guia = [["0","inicio","guia de aroque","SM","",""]];
+
 
 $('#GuardarCon').click(function(){
 var pregunta;
@@ -185,18 +185,18 @@ var tipo;
 	console.log(guia);
 });
 
+var guia = [["0","inicio","","TITULO","",""]];
+
 
 $("#finGuia").click(function(e){
 	swal({
   title: 'Seguro?',
   text: "Quieres finalizar esta guia?",
-  type: 'information',
+  type: 'info',
   showCancelButton: true,
   confirmButtonText: 'Si, finalizar',
   cancelButtonText: 'No, aun no he terminado',
-  confirmButtonClass: 'btn btn-success',
-  cancelButtonClass: 'btn btn-danger',
-  buttonsStyling: false
+ 
 }).then(function() {
 	swal({
 	  title: 'Escibre el Nombre de tu guia',
@@ -212,10 +212,37 @@ $("#finGuia").click(function(e){
 	    })
 	  }
 	}).then(function(result) {
-	  swal({
-	    type: 'success',
-	    html: 'You entered: ' + result
-	  })
+		swal({
+		  title: "Describe tu guia. ('Materia','Instituto' etc.)",
+		  input: 'textarea',
+		  showCancelButton: true
+		}).then(function(text) {
+			$.ajax({
+				url: 'guia.php',
+		            type: "POST",
+		            dataType:'json',
+		            data:{guia:guia,titulo:result,desc:text,usr:$('#finGuia').attr('usuario')},
+		            beforeSend: function() {
+		    			$('#modal1').openModal();
+		    		},
+		            success: function (data) {            	 
+		            	 $('#modal1').closeModal();            	
+		            	 console.log(data);
+		              if(data.response == "correcto"){
+		                swal("EXITO!","Bienvenido "+data.user+"!", "success");
+		              }
+		              else {
+		                swal("Oh no!", data.comment, "error");
+		                 //$('#modal1').openModal(); //LOADING ANIMATION
+		              }
+		            },
+		            error: function(ex) {
+					        console.log(ex);
+					        
+					 }
+			});
+		})
+
 	})
 }, function(dismiss) {
   // dismiss can be 'cancel', 'overlay',

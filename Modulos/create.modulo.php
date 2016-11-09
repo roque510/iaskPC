@@ -145,7 +145,7 @@ if (isset($_GET["btn"])) {
   		<a id="GuardarCon" class="col s12 waves-effect waves-light btn right"><i class="material-icons right">add</i>Guardar / Continuar</a>
   	</div>
   	<div class="col s12 m4">
-  		<a id="finGuia" class="col s12 waves-effect waves-light btn"><i class="material-icons right">done_all</i>Finalizar Guia</a>
+  		<a id="finGuia" usuario="<?php echo	$_SESSION['usr']; ?>" class="col s12 waves-effect waves-light btn"><i class="material-icons right">done_all</i>Finalizar Guia</a>
   	</div>
   </div>
 
