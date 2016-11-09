@@ -42,7 +42,7 @@ if (isset($_GET["btn"])) {
 	    <form class="col s12">
 	      <div class="row container">
 	        <div class="input-field col s12">
-	          <textarea id="textarea1" class="pregunta materialize-textarea white-text shadow"></textarea>
+	          <textarea id="pregunta1" class="pregunta materialize-textarea white-text shadow"></textarea>
 	          <label for="textarea1" style="font-size:50px; font-family:borf; " class="white-text shadow">Pregunta</label>
 	        </div>
 	      </div>
@@ -53,15 +53,15 @@ if (isset($_GET["btn"])) {
 
 	  <div class="row container">
 	  		<div class="input-field col s4 respuestaMala">
-	          <textarea id="textarea1" class="materialize-textarea white-text shadow"></textarea>
+	          <textarea id="mala1" class="materialize-textarea white-text shadow"></textarea>
 	          <label for="textarea1" class="white-text shadow">Respuesta A</label>  					
 	  		</div>
 	  		<div class="input-field col s4 respuestaMala">
-	          <textarea id="textarea1" class="materialize-textarea white-text shadow"></textarea>
+	          <textarea id="mala2" class="materialize-textarea white-text shadow"></textarea>
 	          <label for="textarea1" class="white-text shadow">Respuesta B</label>  			
 	  		</div>
 	  		<div class="input-field col s4 respuestaCorrecta">
-	          <textarea id="textarea1" class="materialize-textarea white-text shadow "></textarea>
+	          <textarea id="resp" class="materialize-textarea white-text shadow "></textarea>
 	          <label for="textarea1" class="white-text shadow">Respuesta Correcta</label>  			
 	  		</div>
 	  	
@@ -71,7 +71,7 @@ if (isset($_GET["btn"])) {
   	<div class="row container">
   		<h5 class="white-text shadow col s8">Eg: En el momento que _________ llego al pueblo todos se alegraron!</h5>
   		<div class="input-field col s4">
-	    	<textarea id="textarea1" class="materialize-textarea white-text shadow"></textarea>
+	    	<textarea id="ejm" class="materialize-textarea white-text shadow"></textarea>
 	    	<label for="textarea1" class="white-text shadow">Respuesta</label>  					
 	  	</div>
   	</div>
@@ -85,12 +85,12 @@ if (isset($_GET["btn"])) {
 		    <form class="col s12">
 		      <div class="row container">
 		        <div class="input-field col s8 pregunta">
-		          <textarea id="textarea1" placeholder="Escribe tu pregunta aqui" class=" materialize-textarea white-text shadow"></textarea>
+		          <textarea id="pregunta2" placeholder="Escribe tu pregunta aqui" class=" materialize-textarea white-text shadow"></textarea>
 		          <label for="textarea1" style="font-size:50px; font-family:borf; " class="white-text shadow">Pregunta</label>
 		        </div>
 
 				    <div class="input-field col s4 respuestaCorrecta">
-			          <textarea id="textarea1" class="materialize-textarea white-text shadow "></textarea>
+			          <textarea id="respuesta" class="materialize-textarea white-text shadow "></textarea>
 			          <label for="textarea1" class="white-text shadow">Respuesta Correcta</label>  			
 			  		</div>
 
@@ -145,7 +145,7 @@ if (isset($_GET["btn"])) {
   		<a id="GuardarCon" class="col s12 waves-effect waves-light btn right"><i class="material-icons right">add</i>Guardar / Continuar</a>
   	</div>
   	<div class="col s12 m4">
-  		<a id="finGuia" class="col s12 waves-effect waves-light btn"><i class="material-icons right">done_all</i>Finalizar Guia</a>
+  		<a id="finGuia" usuario="<?php echo	$_SESSION['usr']; ?>" class="col s12 waves-effect waves-light btn"><i class="material-icons right">done_all</i>Finalizar Guia</a>
   	</div>
   </div>
 
