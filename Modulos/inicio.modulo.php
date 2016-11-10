@@ -1,3 +1,19 @@
+<?php 
+require("config.php");
+
+
+$database = new medoo([
+          'database_type' => 'mysql',
+          'database_name' => $DB,
+          'server' => $SVR,
+          'username' => $USR,
+          'password' => $PW,
+          'charset' => 'utf8'
+        ]);
+
+$buscar = false;
+
+?>
 <div class="blank container">
   <div class="row infowrap ">
     <div class="col s12">
@@ -9,12 +25,30 @@
 
 
   <ul class="collapsible borderless z-depth-0 transparent" data-collapsible="accordion">
+
+  <?php 
+    if ($database->has("guia", [
+
+      "creador" => $_SESSION['usr'],
+
+]))
+{
+  $buscar = true;
+}
+
+if (!$buscar) {
+  echo '<li class="grey white-text">No hay guias aun... :C</li>';
+}else
+{
+
+  ?>
+  
     <li class="">
        <div class="collapsible-header transparent white-text shadow row">  
 
           <div class="col s12 m4">
             <i class="material-icons">filter_drama</i>
-            First
+            <?php echo $buscar?>
 
           </div>
           <div class="col s12 m8 row container right white-text shadow">
@@ -83,6 +117,8 @@
 
       <div class="collapsible-body colab white-text"><p>Lorem ipsum dolor sit amet.</p></div>
     </li>
+
+    <?php  } ?>
    
   </ul>
 
