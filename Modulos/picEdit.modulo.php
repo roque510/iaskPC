@@ -6,7 +6,7 @@
         <div class="input-field col s12 m6 white-text">
           <input placeholder="Pega la url de tu imagen aqui" id="first_name" type="text" class="validate">
           <label for="first_name" class="white-text shadow">URL</label>
-<a class="waves-effect waves-light btn" href="?pg=perfil"><i class="material-icons left">undo</i>Regresar</a>
+<a class="waves-effect waves-light btn back" href="#"><i class="material-icons left">undo</i>Regresar</a>
 <a class="waves-effect waves-light btn" ><i class="material-icons right">save</i>Guardar</a>
 
         </div>

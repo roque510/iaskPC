@@ -41,6 +41,13 @@ if (!$buscar) {
 }else
 {
 
+  $datas = $database->select("guia","*", [
+    "creador" => $_SESSION['usr']
+  ]);
+   
+
+  foreach($datas as $data)
+  {
   ?>
   
     <li class="">
@@ -48,7 +55,7 @@ if (!$buscar) {
 
           <div class="col s12 m4">
             <i class="material-icons">filter_drama</i>
-            <?php echo $buscar?>
+            <?php echo $data['Nombre']?>
 
           </div>
           <div class="col s12 m8 row container right white-text shadow">
@@ -56,69 +63,25 @@ if (!$buscar) {
 
             <div class="col m4  pdefault shadow" style="text-align: right;">Estatus: <span style="margin-left:10px;" class=""> Activo  </span></div>
 
-            <div class="col m4  pdefault shadow" style="text-align: right;">Porcentaje: <span style="margin-left:10px;" class=""> 0%    </span> </div>
+            <div class="col m4  pdefault shadow" style="text-align: right;">Porcentaje: <span style="margin-left:10px;" class=""> <?php echo $data['Calificacion']; ?>    </span> </div>
              <div class="col m4  left">             
               <i class="material-icons stroke delete right">delete</i>
               <i class="material-icons stroke edit right">mode_edit</i>
+              <a class="white-text" href="?pg=viewGuide&id=<?php echo $data['Idguia']; ?>"><i  class="material-icons  view right">remove_red_eye</i></a>
+
+
              </div>
 
           </div>
        </div>      
 
-      <div class="collapsible-body colab white-text"><p>Lorem ipsum dolor sit amet.</p></div>
+      <div class="collapsible-body colab white-text"><p><?php echo $data['Desc']; ?></p></div>
     </li>
 
-        <li class="">
-       <div class="collapsible-header transparent white-text shadow row">  
+       
 
-          <div class="col s12 m4">
-            <i class="material-icons">share</i>
-            Second
-
-          </div>
-          <div class="col s12 m8 row container right white-text shadow">
-           
-
-            <div class="col m4  pdefault shadow" style="text-align: right;">Estatus: <span style="margin-left:10px;" class=""> Activo  </span></div>
-
-            <div class="col m4  pdefault shadow" style="text-align: right;">Porcentaje: <span style="margin-left:10px;" class=""> 0%    </span> </div>
-             <div class="col m4  left">             
-              <i class="material-icons stroke delete right">delete</i>
-              <i class="material-icons stroke edit right">mode_edit</i>
-             </div>
-
-          </div>
-       </div>      
-
-      <div class="collapsible-body colab white-text"><p>Lorem ipsum dolor sit amet.</p></div>
-    </li>
-
-        <li class="">
-       <div class="collapsible-header transparent white-text shadow row">  
-
-          <div class="col s12 m4">
-            <i class="material-icons">lock</i>
-            third
-
-          </div>
-          <div class="col s12 m8 row container right white-text shadow">
-           
-
-            <div class="col m4  pdefault shadow" style="text-align: right;">Estatus: <span style="margin-left:10px;" class=""> Activo  </span></div>
-
-            <div class="col m4  pdefault shadow" style="text-align: right;">Porcentaje: <span style="margin-left:10px;" class=""> 0%    </span> </div>
-             <div class="col m4  left">             
-              <i class="material-icons stroke delete right">delete</i>
-              <i class="material-icons stroke edit right">mode_edit</i>
-             </div>
-
-          </div>
-       </div>      
-
-      <div class="collapsible-body colab white-text"><p>Lorem ipsum dolor sit amet.</p></div>
-    </li>
-
-    <?php  } ?>
+    <?php  }//fin del foreach
+    }//fin else ?>
    
   </ul>
 
