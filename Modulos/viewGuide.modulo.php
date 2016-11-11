@@ -59,6 +59,7 @@ if (!$buscar) {
                   </div>                  
                 </div>
 	</div>
+  <div class="creador row center">Creador: <?php echo $data[0]["creador"]; ?></div>
 
 	<div class="divider black container"></div>
 

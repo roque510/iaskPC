@@ -48,6 +48,7 @@ if ($database->has("usuarios", [
 	
 	$_SESSION['usr'] = $usr;
 	$_SESSION['uid'] = $uid;
+	session_write_close(); 
 
 	$arr = array ('response'=>'correcto','user'=> $usr, 'comment'=>"blank");
 	echo json_encode($arr);
