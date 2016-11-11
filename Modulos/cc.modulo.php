@@ -18,7 +18,7 @@
       <div class="row container">
       	<div class="col m4"></div>
       	<div class="col m4">
-      		<a class="waves-effect waves-light btn right" href="?pg=perfil"><i class="material-icons left">undo</i>Regresar</a>
+      		<a class="waves-effect waves-light btn right back" href="#"><i class="material-icons left">undo</i>Regresar</a>
       	</div>
       	<div class="col m4">
       		<a class="waves-effect waves-light btn"><i class="material-icons left">save</i>Salvar</a>
