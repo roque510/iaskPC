@@ -33,6 +33,11 @@ if($exists){
 	]);
 
 	$cali = $profile["calificacion"];
+
+	//
+	$query = "SELECT COUNT( * ) FROM  `guia` where `creador`= '".$profile['usuario']."'";
+	
+	$data = $database->query($query)->fetchAll();
 ?>
 
 <div class="row container">
@@ -59,8 +64,8 @@ if($exists){
 	<div class="col s12 m8 ">
 		<h2 class="white-text shadow borf" >Usuario: <span><?php echo $profile['usuario']; ?></span></h2>
 		<h2 class="white-text shadow borf" >Correo: <span><?php echo $profile['correo']; ?></span></h2>
-		<h2 class="white-text shadow borf" >Guias Creadas: <span>99</span></h2>
-		<h2 class="white-text shadow borf" >Promedio de estudio: <span>80%</span></h2>
+		<h2 class="white-text shadow borf" >Guias Creadas: <span><?php echo $data[0][0]; ?></span></h2>
+		<!--h2 class="white-text shadow borf" >Promedio de estudio: <span>80%</span></h2-->
 		<h2 class="white-text shadow borf" >Calidad de creador: <span><br>
                 <div id="rating">
                   <div class="" style="width: 305px; height:50px;">
