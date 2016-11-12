@@ -59,7 +59,7 @@ if (!$buscar) {
                   </div>                  
                 </div>
 	</div>
-  <div class="creador row center">Creador: <?php echo $data[0]["creador"]; ?></div>
+  <div class="creador row center">Creador: <a href='?pg=perfil&usr=<?php echo $data[0]["creador"]; ?>'><?php echo $data[0]["creador"]; ?></a></div>
 
 	<div class="divider black container"></div>
 
