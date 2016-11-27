@@ -1,5 +1,25 @@
 
 $( document ).ready(function() {
+
+var validate = function(){
+
+	  if($( "#cv" ).val() != "")
+  		if($( "#cn" ).val() != "")
+  			if($( "#cnr" ).val() != "")
+  				if ($( "#cn" ).val() === $( "#cnr" ).val()) {
+  					$("#cc").removeClass("disabled");	
+  					$( "#lblcnr" ).html("");
+  				}  				
+  			else
+  				$("#cc").addClass("disabled");
+ }
+
+     $(document).on('keyup', validate);
+    $('input').focus(validate);
+
+
+
+
 	$('a.back').click(function(){
 		parent.history.back();
 		return false;
@@ -111,21 +131,111 @@ var check = true;
 
 });
 
-$("#loginFrm").on('submit',function(e){
+$("#btnToken").click(function(e){
+	$.ajax({
+		url: 'email.php',
+		type: 'POST',
+		dataType: 'json',
+		data: {email:$('#btnToken').attr('email')},
+		beforeSend: function() {
+    			$('#modal1').openModal();    					
+    	},
+    	success: function(data){
+    		$('#modal1').closeModal();
+    		swal("Perfecto,","el token a sido enviado a tu correo!","success");
+    	},
+    	error: function(jqXHR, textStatus, errorThrown) {
+			        console.log(JSON.stringify(jqXHR));
+			      	console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+    	}
+
+	});
+});
+
+$("#emailS").click(function(e){
+	console.log("emails!");
+		if ($('#nuevoCorreo').val() === "" || $('#token').val() === "" ) {
+		swal("Alto!","Debes llenar todos los campos","warning");
+		return;
+	}
+	swal("IMPORTANTE!","Revisa tu correo nuevo por un link de confirmacion para poder completar la activacion de tu nuevo correo!","warning").then(function(){
+			$.ajax({
+		url: 'cemail.php',
+		type: 'POST',
+		dataType: 'json',
+		data: {email:$('#btnToken').attr('email'),nemail:$('#nuevoCorreo').val(),token:$('#token').val()},
+		beforeSend: function() {
+    			$('#modal1').openModal();    					
+    	},
+    	success: function(data){
+    		$('#modal1').closeModal();
+    		console.log(data);
+    	},
+    	error: function(jqXHR, textStatus, errorThrown) {
+			        console.log(JSON.stringify(jqXHR));
+			      	console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+    	}
+
+	});
+	});
+});
+
+$("#cemail").click(function(e){
+	if ($('#nuevoCorreo').val() === "" || $('#token').val() === "" ) {
+		swal("Alto!","Debes llenar todos los campos","warning");
+		return;
+	}
+
+	$.ajax({
+		url: 'cemail.php',
+		type: 'POST',
+		dataType: 'json',
+		data: {email:$('#btnToken').attr('email'),nemail:$('#nuevoCorreo').val(),token:$('#token').val()},
+		beforeSend: function() {
+    			$('#modal1').openModal();    					
+    	},
+    	success: function(data){
+    		$('#modal1').closeModal();
+    		console.log(data);
+    	},
+    	error: function(jqXHR, textStatus, errorThrown) {
+			        console.log(JSON.stringify(jqXHR));
+			      	console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+    	}
+
+	});
+});
+
+$('#pwd').keypress(function(e) {
+    if(e.which == 13) {
+    	$("#initlog").click();
+    }
+});
+
+$('#usr').keypress(function(e) {
+    if(e.which == 13) {
+    	$("#initlog").click();
+    }
+});
+
+$("#initlog").on('click',function(e){
 	$.ajax({
 		url: 'usrp.php',
             type: "POST",
             dataType:'json',
-            data:  $('#loginFrm').serialize(),
+            data:  {usr:$('#usr').val(),pwd:$('#pwd').val()},
             beforeSend: function() {
     			$('#modal1').openModal();
+    					var delay=1000; //1 second
     		},
             success: function (data) {
             	 $('#modal1').closeModal();
             	 console.log(data.response);
             	 console.log(data);
               if(data.response == "correcto"){
-                swal("EXITO!","Bienvenido "+data.user+"!", "success");
+                swal("EXITO!","Bienvenido "+data.user+"!", "success").then(function(e){
+                	location.reload();
+                });
               }
               else {
                 swal("Oh no!", data.comment, "error");
@@ -139,7 +249,19 @@ $("#loginFrm").on('submit',function(e){
 	});
 });
 
+	
 
+$( "#cnr" ).focusin(function(e){
+if ($( "#cn" ).val() != $( "#cnr" ).val()) {
+		  Materialize.toast('<span class="amber-text">Las contraseñas deben ser iguales!</span>', 3000, 'rounded');
+	}
+});
+
+$( "#cnr" ).focusout(function(e){
+if ($( "#cn" ).val() != $( "#cnr" ).val()) {
+		  Materialize.toast('<span class="amber-text">Las contraseñas deben ser iguales!</span>', 3000, 'rounded');
+	}
+});
 
 $('#GuardarCon').click(function(){
 var pregunta;
@@ -189,6 +311,70 @@ var tipo;
 	$("#bgGuia").append('<h1 class="preg center">'+guia[guia.length -1][0]+'<span><i class="material-icons">label</i></span> '+pregunta+' <span> ('+tipo+')</span></h1><h2 class="borf resp center teal-text">R= '+respuesta+'<span><i class="material-icons">check</i></span> </h2>');
 
 	console.log(guia);
+});
+
+$("#savepic").click(function(e){
+	$usr = $("#savepic").attr("usr");
+	$foto = $("#pic").val();
+
+	$.ajax({
+		type: "post",
+		url: "savepic.php",
+		dataType:'json',
+		data: {usr:$usr,foto:$foto},
+		beforeSend: function() {
+		    			$('#modal1').openModal();
+		    		},
+		success: function (data) {
+			swal(data.comment);
+			location.reload();
+		},
+		error: function(ex) {
+				console.log(ex);
+		}
+
+	});
+
+});
+
+
+
+
+
+$("#cc").click(function(e){
+	$cv = $("#cv").val();
+	$cn = $("#cn").val();
+	$usr = $("#cv").attr("usr");
+
+	console.log($cv+' '+$cn+ ' '+$usr);
+
+	$.ajax({
+		type: "post",
+		url: "cc.php",
+		dataType:'json',
+		data: {pwd:$cv,cn:$cn,usr:$usr},
+		beforeSend: function() {
+		    			$('#modal1').openModal();
+
+		    		},
+		success: function (data) {
+			if(data.response == "correcto")
+					swal("Excelente!","contraseña cambiada exitosamente","success").then(function(){
+						location.reload();
+					});
+			else
+				swal("Oh no...","La contraseña actual no es igual a la que ingresaste...","error").then(function(){
+					location.reload();
+				});
+			
+			
+		},
+		error: function(ex) {
+				console.log(ex);
+		}
+
+	});
+
 });
 
 var guia = [["0","inicio","","TITULO","",""]];

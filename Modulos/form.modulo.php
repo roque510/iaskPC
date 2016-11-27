@@ -49,7 +49,8 @@ modulo('header');
     </form>
   </div>
 
-	<a id="frmbtn" class="frmbtna waves-effect waves-light btn" ><i class="material-icons right">save</i>Salvar</a>
+	<a id="frmbtn" class="frmbtna waves-effect waves-light btn " ><i class="material-icons right">save</i>Salvar</a>
+  <a class="waves-effect waves-light btn right back" href="#"><i class="material-icons left">undo</i>Regresar</a>
 
 
 </div>

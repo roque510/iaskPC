@@ -10,6 +10,34 @@ html{
     
 }
 
+#success{
+  font-size: 45px;
+  background-color: rgba(300,800,13,0.7);
+  text-align: center;
+  color: black;
+  
+}
+
+#error{
+  font-size: 45px;
+  background-color: rgba(65,8,13,0.7);
+  text-align: center;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.1em black;
+}
+
+.font60{
+  font-size: 60px !important;
+}
+
+.font30{
+  font-size: 30px;
+}
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
 
 .emailCE{
 
