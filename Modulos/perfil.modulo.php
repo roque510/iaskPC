@@ -47,6 +47,10 @@ if($exists){
 				<span id="picWrapper" class="circle">
 				</span>
 					<img id="profilePic" height="135" width="135" class="circle" src="<?php echo $profile['foto']; ?>" onError="this.onerror=null;this.src='img/perfil.png';">
+					
+					<?php 
+
+					?>
 					<a href="?pg=picEdit" class="btn-floating waves-effect waves-light amber profileEdit" >
       					<i class="large material-icons">mode_edit</i>
     				</a>

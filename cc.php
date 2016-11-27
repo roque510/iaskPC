@@ -1,23 +1,23 @@
 <?php 
-session_start();
-require_once ('medoo.php');
-require_once('funciones.php');
-require_once('config.php');
+require("config.php");
 
-
+$cn = "";
 $usr = "";
 $pwd = "";
-$admin = "no es admin";
-
 
 
 if (isset($_POST['usr'])) {
 	$usr = $_POST['usr'];
 }
+
+if (isset($_POST['cn'])) {
+	$cn = md5($_POST['cn']);
+}
+
+
 if (isset($_POST['pwd'])) {
 	$pwd = md5($_POST['pwd']);
 }
-
 
 $database = new medoo([
           'database_type' => 'mysql',
@@ -27,6 +27,7 @@ $database = new medoo([
           'password' => $PW,
           'charset' => 'utf8'
         ]);
+
 
 if ($database->has("usuarios", [
 	"AND" => [
@@ -40,20 +41,16 @@ if ($database->has("usuarios", [
 ]))
 {
 	
-	$_SESSION['usr'] = $usr;
-	$_SESSION['init'] = "usr";
-	session_write_close(); 
-	$database->update("usuarios",["token" => uniqid()],["usuario" => $usr]);
-	$arr = array ('response'=>'correcto','user'=> $usr, 'comment'=>"blank");
+	$database->update("usuarios",["pass" => $cn],["usuario" => $usr]);
+
+	$arr = array ('response'=>'correcto','comment'=> "Contrasena cambiada exitosamente!" );
 	echo json_encode($arr);
 }
 else
 {
-	$arr = array ('response'=>'Error','comment'=> 'Usuario o Contraseña incorrecta.' );
+	$arr = array ('response'=>'error','comment'=> "la contrasena proporsionada no es la correcta...");
 	echo json_encode($arr);
 }
-
-
 
 
 
