@@ -225,8 +225,26 @@ position: relative;
   color: rgba( 217, 53, 11,0.8) !important;
 }
 
+.delete:hover{
+  color: rgba( 217, 53, 11,0.8) !important;
+  font-size: 35px;
+}
+
 .edit{
   color: rgba(210,146,52,0.8) !important;
+}
+
+.edit:hover{
+  color: rgba(210,146,52,0.8) !important;
+  font-size: 35px;
+}
+
+.view:hover{
+  font-size: 35px;
+}
+
+.editting{
+  background-color: rgba(210,146,52,0.8) !important;
 }
 
 .borderless{

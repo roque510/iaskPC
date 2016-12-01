@@ -421,7 +421,7 @@ $("#finGuia").click(function(e){
 		            	 $('#modal1').closeModal();            	
 		            	 console.log(data);
 		              if(data.response == "correcto"){
-		                swal("EXITO!","Bienvenido "+data.user+"!", "success");
+		                swal("EXITO!","Guia Finalizada.", "success");
 		              }
 		              else {
 		                swal("Oh no!", data.comment, "error");
@@ -444,6 +444,67 @@ $("#finGuia").click(function(e){
   }
 })
 });
+
+$('.deleteG').click(function(e){
+	var guia = $(this);
+	swal({title:"Atencion!",html:"<b><i><h2 class='teal-text'>"+$(this).attr("Nombre")+"</h2></b></i><h4>Seguro que quieres borrar esta guia?</h4>",type:"warning",showCancelButton: true, confirmButtonText: "Si", cancelButtonText: "No"}).then(function () {
+		$.ajax({
+				url: 'delete.php',
+		            type: "POST",
+		            dataType:'json',
+		            data:{idguia:guia.attr("idGuia")},
+		            beforeSend: function() {
+		    			$('#modal1').openModal();
+		    		},
+		            success: function (data) {            	 
+		            	 $('#modal1').closeModal();            	
+		            	 console.log(data);
+		              if(data.response == "correcto"){
+		                swal("Enhorabuena!","La guia fue borrada exitosamente", "success").then(function(e){
+		                	location.reload();
+		                });
+		              }
+		              else {
+		                swal("Oh no!", data.comment, "error");
+		                 //$('#modal1').openModal(); //LOADING ANIMATION
+		              }
+		            },
+		            error: function(ex) {
+					        console.log(ex);
+					        
+					 }
+			});
+});
+});
+
+$('.delQuest').click(function(e){
+	var num = $(this).attr('arraynum');
+	array.splice(num, 1);
+	var parent = $(this).parent();
+	parent.remove();
+	console.log(array);
+});
+
+/*
+$('.preguntaEdit').click(function(e){
+	 var input = $('<input />');
+	$(this).replaceWith('<input class="editting col m8 font60 borf" type="text" value="'+$(this).text()+'" />');
+});
+
+$('.editbtn').click(function(e){
+	$('.preguntaEdit').click();
+});
+
+$("#bgGuia").click(function(e){
+	$('.editting').replaceWith('<div class="col m8  preguntaEdit">'+$('.editting').text()+'"</div>');
+});
+
+$('.doneEditPreg').click(function(e) {
+
+
+swal("e");
+});*/
+
 
 
 

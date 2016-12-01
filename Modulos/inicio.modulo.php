@@ -64,9 +64,10 @@ if (!$buscar) {
             <div class="col m4  pdefault shadow" style="text-align: right;">Estatus: <span style="margin-left:10px;" class=""> Activo  </span></div>
 
             <div class="col m4  pdefault shadow" style="text-align: right;">Porcentaje: <span style="margin-left:10px;" class=""> <?php echo $data['Calificacion']; ?>    </span> </div>
-             <div class="col m4  left">             
-              <i class="material-icons stroke delete right">delete</i>
-              <i class="material-icons stroke edit right">mode_edit</i>
+             <div class="col m4  left">
+
+              <i idGuia="<?php echo $data['Idguia'];?>" Nombre="<?php echo $data['Nombre'];?>" class="material-icons stroke delete deleteG right">delete</i>
+              
               <a class="white-text" href="?pg=viewGuide&id=<?php echo $data['Idguia']; ?>"><i  class="material-icons  view right">remove_red_eye</i></a>
 
 
